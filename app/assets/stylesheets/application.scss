@@ -1,2 +1,35 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+$gray-medium-ligth: #948a8a;
+$gray-ligth: #c8c9c8;
+$gray: #6f7077;
+$gray-darker: #2fbbdf;
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $gray-medium-ligth;
+  color: $gray-ligth;
+
+  a {
+    color: $gray;
+    &:hover {
+      color: $gray-darker;
+    }
+  }
+
+  small {
+    float: left;
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
