@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-xs-12 text-center">
+    <h1>My contacts</h1>
+  </div>
+
+  <div class="col-md-8 col-md-offset-2 col-xs-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th colspan="2">
+            Actions
+            <%= link_to 'New contact', new_contact_path(current_page?), class: 'btn btn-success' %>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @contacts.empty? %>
+          <tr>
+            <td colspan="4" class="text-center">
+              <h3>No registered contacts.</h3>
+              <%= link_to 'click here', new_contact_path(current_page?) %> to register a new contact
+            </td>
+          </tr>
+        <% end %>
+        <% @contacts.each do |c| %>
+        <tr>
+          <td>
+            <%= c.name %>
+          </td>
+          <td>
+            <%= c.phone %>
+          </td>
+          <td>
+            <%= link_to 'Show', c %>
+          </td>
+          <td>
+            <%= link_to 'Edit', class: 'btn btn-warning' %>
+          </td>
+          <td>
+            <%= link_to 'Destroy', method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete?' } %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%# , user_contact_path(current_user, c) %>

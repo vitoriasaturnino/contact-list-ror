@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   # definindo rotas para os links no footer das páginas 
   # req get, nome rota, acessa o controller # action
   get 'about', to: 'static_pages#about'
-  get 'contact', to: 'static_pages#contact'
+  get 'info_contact', to: 'static_pages#contact'
+
+  # normas padrão de uma arquitetura rest (crud de contatos)
+  resources :contacts
 end
