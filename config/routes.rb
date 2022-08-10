@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'about', to: 'static_pages#about'
   get 'info_contact', to: 'static_pages#contact'
 
-  # normas padrão de uma arquitetura rest (crud de contatos)
+  # rotas padrão de uma arquitetura rest (crud de contatos)
   resources :contacts
+  # rotas padrão de uma arquitetura rest (crud de users)
+  resources :users, only: [:new, :create]
 end
